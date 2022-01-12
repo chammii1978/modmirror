@@ -261,7 +261,7 @@ class MirrorListener(listeners.MirrorListeners):
                 msg += f'\n<b>📁 Files: </b>{files}'
             buttons = button_build.ButtonMaker()
             link = short_url(link)
-            buttons.buildbutton("☁️ ᴅʀɪᴠᴇ ʟɪɴᴋ ☁️", link)
+            buttons.buildbutton("📚 Course Link 📚", link)
             LOGGER.info(f'Done Uploading {download_dict[self.uid].name()}')
             if INDEX_URL is not None:
                 url_path = requests.utils.quote(f'{download_dict[self.uid].name()}')
@@ -299,7 +299,7 @@ class MirrorListener(listeners.MirrorListeners):
         fwdpm = f'\n\n<b>You Can Find Upload In Private Chat</b>\n\n<b>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬</b>'
         logmsg = sendLog(msg + msg_g, self.bot, self.update, InlineKeyboardMarkup(buttons.build_menu(2)))
         if logmsg:
-            log_m = f"\n\n<b>Link Uploaded, Click Below Button</b>\n\n<b>I've Sent Your Links In Pm</b>"
+            log_m = f"\n\n<b>Link Uploaded, Click Below Button</b>\n\n<b>Check Your PM For Ur Uploaded Course Link</b>"
         else:
             pass
         sendMarkup(msg + log_m + fwdpm, self.bot, self.update, InlineKeyboardMarkup([[InlineKeyboardButton(text="Get Your Links", url=logmsg.link)]]))
